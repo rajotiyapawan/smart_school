@@ -27,7 +27,8 @@ class dashboard_header extends StatelessWidget {
           CircleAvatar(
             radius: 50,
             backgroundColor: Colors.grey,
-            child: CachedNetworkImage(imageUrl: imgSrc),
+            child: ClipOval(
+                child: CachedNetworkImage(imageUrl: imgSrc, fit: BoxFit.cover, width: 100, height: 100,)),
           ),
           SizedBox(height: 10),
           Text(
