@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smart_school/dashboard/components/dashboard_drawer.dart';
 
+import 'components/dashboard_drawer.dart';
 import 'components/dashboard_header.dart';
 import 'components/itemlist_cards.dart';
 

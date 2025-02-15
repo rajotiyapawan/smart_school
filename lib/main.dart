@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:smart_school/core/services/injection_container.dart';
+import 'package:smart_school/src/dashboard/dashboard.dart';
 
-import 'dashboard/dashboard.dart';
-
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await init(); // dependency injection
   runApp(const MyApp());
 }
 
