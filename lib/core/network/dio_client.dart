@@ -21,15 +21,15 @@ class DioClient {
       onRequest: (options, handler) {
         // Add authorization token if needed
         options.headers["Authorization"] = "Bearer YOUR_TOKEN";
-        if(kDebugMode) printRequest(options);
+        printRequest(options);
         return handler.next(options);
       },
       onResponse: (response, handler) {
-        if(kDebugMode) printResponse(response);
+        printResponse(response);
         return handler.next(response);
       },
       onError: (DioException e, handler) {
-        if(kDebugMode) printError(e);
+        printError(e);
         return handler.next(e);
       },
     ));
@@ -69,26 +69,32 @@ class DioClient {
 
   /// 🖨 **Logs Request Data**
   void printRequest(RequestOptions options) {
-    print('➡️ [API Request] ${options.method} ${options.uri}');
-    print('Headers: ${options.headers}');
-    print('Query Parameters: ${options.queryParameters}');
-    if (options.data != null) {
-      print('Body: ${options.data}');
+    if (kDebugMode) {
+      print('➡️ [API Request] ${options.method} ${options.uri}');
+      print('Headers: ${options.headers}');
+      print('Query Parameters: ${options.queryParameters}');
+      if (options.data != null) {
+        print('Body: ${options.data}');
+      }
     }
   }
 
   /// 🖨 **Logs Response Data**
   void printResponse(Response response) {
-    print('✅ [API Response] ${response.statusCode} ${response.requestOptions.uri}');
-    print('Data: ${response.data}');
+    if (kDebugMode) {
+      print('✅ [API Response] ${response.statusCode} ${response.requestOptions.uri}');
+      print('Data: ${response.data}');
+    }
   }
 
   /// 🖨 **Logs Error Data**
   void printError(DioException e) {
-    print('❌ [API Error] ${e.requestOptions.uri}');
-    print('Error: ${e.message}');
-    if (e.response != null) {
-      print('Response Data: ${e.response?.data}');
+    if (kDebugMode) {
+      print('❌ [API Error] ${e.requestOptions.uri}');
+      print('Error: ${e.message}');
+      if (e.response != null) {
+        print('Response Data: ${e.response?.data}');
+      }
     }
   }
 

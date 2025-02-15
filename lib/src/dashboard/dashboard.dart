@@ -41,15 +41,29 @@ class DashboardScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const dashboard_header(name: "John Doe", admissionNumber: "18001", className: "Class 3(A)", imgSrc: "https://picsum.photos/200/300"),
+            const DashboardHeader(
+                name: "John Doe",
+                admissionNumber: "18001",
+                className: "Class 3(A)",
+                imgSrc: "https://picsum.photos/200/300"),
             Container(
               width: double.infinity,
               padding: const EdgeInsets.only(bottom: 40),
-              decoration: const BoxDecoration(color: Colors.white, borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20))),
+              decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20),
+                  )),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Container(width: 40, color: Colors.black, height: 4, margin: EdgeInsets.only(top: 10)),
+                  Container(
+                    width: 40,
+                    color: Colors.black,
+                    height: 4,
+                    margin: const EdgeInsets.only(top: 10),
+                  ),
                   const SizedBox(height: 30),
                   dashboardCards(columns),
                   const SizedBox(height: 20),
@@ -68,7 +82,16 @@ class DashboardScreen extends StatelessWidget {
   }
 
   Widget dashboardCards(int columns) {
-    var list = ["Homework", "Daily Assignment", "Lesson Plan", "Online Examination", "Download Center", "Online Course", "Zoom Live Classes", "Gmeet Live Classes"];
+    var list = [
+      "Homework",
+      "Daily Assignment",
+      "Lesson Plan",
+      "Online Examination",
+      "Download Center",
+      "Online Course",
+      "Zoom Live Classes",
+      "Gmeet Live Classes"
+    ];
     return ItemListCard(
       list: list,
       columns: columns,

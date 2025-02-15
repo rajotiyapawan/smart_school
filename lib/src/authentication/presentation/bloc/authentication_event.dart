@@ -8,7 +8,7 @@ sealed class AuthenticationEvent extends Equatable {
 }
 
 class CreateUserEvent extends AuthenticationEvent {
-  CreateUserEvent(
+  const CreateUserEvent(
       {required this.id,
       required this.name,
       required this.className,

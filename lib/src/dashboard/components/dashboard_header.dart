@@ -1,13 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-class dashboard_header extends StatelessWidget {
+class DashboardHeader extends StatelessWidget {
   final String imgSrc;
   final String name;
   final String admissionNumber;
   final String className;
 
-  const dashboard_header({
+  const DashboardHeader({
     super.key,
     required this.imgSrc,
     required this.name,
@@ -20,7 +20,7 @@ class dashboard_header extends StatelessWidget {
     return Container(
       width: double.infinity,
       color: Colors.lightBlue[100],
-      padding: EdgeInsets.only(top: 30),
+      padding: const EdgeInsets.only(top: 30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -30,16 +30,16 @@ class dashboard_header extends StatelessWidget {
             child: ClipOval(
                 child: CachedNetworkImage(imageUrl: imgSrc, fit: BoxFit.cover, width: 100, height: 100,)),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Text(
             name,
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
           Text(
             "Admission No. $admissionNumber   $className",
-            style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
         ],
       ),
     );

@@ -87,7 +87,6 @@ void main() {
 
   group('getUsers', () {
     const userModel1 = UserModel.empty();
-    const user1 = User.empty();
 
     test(
         'should call [AuthenticationRemoteDataSource.getUsers] and return [List<UserModel>]'

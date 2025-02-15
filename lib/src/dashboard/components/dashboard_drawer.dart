@@ -13,20 +13,20 @@ class DashboardDrawer extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            padding: EdgeInsets.all(16),
+            padding: const EdgeInsets.all(16),
             color: Colors.lightBlue[100],
             child: Column(
               children: [
                 Align(
                   alignment: Alignment.topLeft,
                   child: IconButton(
-                    icon: Icon(Icons.arrow_back, color: Colors.white),
+                    icon: const Icon(Icons.arrow_back, color: Colors.white),
                     onPressed: () {
                       Navigator.pop(context); // Close drawer
                     },
                   ),
                 ),
-                Row(
+                const Row(
                   children: [
                     CircleAvatar(
                       radius: 32,
@@ -90,8 +90,8 @@ class DashboardDrawer extends StatelessWidget {
                     Navigator.pop(context);
                   },
                 ),
-                Divider(),
-                Center(
+                const Divider(),
+                const Center(
                   child: Text(
                     "Version 1.0.0", // Replace with actual version
                     style: TextStyle(color: Colors.grey, fontSize: 12),

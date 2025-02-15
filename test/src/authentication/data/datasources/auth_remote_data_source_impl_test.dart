@@ -35,7 +35,7 @@ void main() {
           .thenAnswer((_) async => tResponse);
 
       // Act
-      final methodCall = await remoteDataSource.createUser;
+      final methodCall = remoteDataSource.createUser;
 
       // Assert
       //checking the method completes successfully
