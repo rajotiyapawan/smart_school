@@ -18,7 +18,21 @@ class DashboardScreen extends StatelessWidget {
       key: _scaffoldKey,
       appBar: AppBar(
         backgroundColor: Colors.lightBlue[100],
-        title: const Center(child: Text("Dashboard")),
+        title: Center(
+            child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Image.asset(
+              'assets/images/icons8-school-100.png',
+              width: 30,
+              height: 30,
+            ),
+            const Text(
+              "Dashboard",
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+          ],
+        )),
         leading: IconButton(
           icon: const Icon(Icons.menu), // Hamburger icon
           onPressed: () {

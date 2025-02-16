@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:smart_school/core/routes/app_routes.dart';
 
 class DashboardDrawer extends StatelessWidget {
   const DashboardDrawer({
@@ -13,14 +14,14 @@ class DashboardDrawer extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.fromLTRB(16, 30, 16,16),
             color: Colors.lightBlue[100],
             child: Column(
               children: [
                 Align(
                   alignment: Alignment.topLeft,
                   child: IconButton(
-                    icon: const Icon(Icons.arrow_back, color: Colors.white),
+                    icon: const Icon(Icons.arrow_back, color: Colors.black),
                     onPressed: () {
                       Navigator.pop(context); // Close drawer
                     },
@@ -66,7 +67,7 @@ class DashboardDrawer extends StatelessWidget {
                   leading: const Icon(Icons.person),
                   title: const Text("Profile"),
                   onTap: () {
-                    Navigator.pop(context);
+                    Navigator.pushNamed(context, AppRoutes.profile);
                   },
                 ),
                 ListTile(
